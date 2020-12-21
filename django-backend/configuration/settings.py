@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'l8ftx5(_snb7om^ib$!4g%e+x3ph+eqw$*rtx!dnsf%#*2^r*d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DJANGO_DEBUG", False)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ['127.0.0.1', 'localhost'])
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -110,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-REDIS_HOST = os.getenv("REDIS_HOST") or '127.0.0.1'
-REDIS_PORT = os.getenv("REDIS_PORT") or '6379'
-REDIS_DB = os.getenv("REDIS_DB") or '0'
+REDIS_HOST = os.getenv("REDIS_HOST", '127.0.0.1')
+REDIS_PORT = os.getenv("REDIS_PORT", '6379')
+REDIS_DB = os.getenv("REDIS_DB", '0')
 
 
 CACHES = {
