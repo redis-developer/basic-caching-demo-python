@@ -11,8 +11,7 @@ class StatsMiddleware:
         response = self.get_response(request)
 
         duration = time.time() - start_time
-
-        response["X-Response-Time"] = f'{int(duration * 1000)}ms'
+        response["X-Response-Time"] = f'{round(duration * 1000, 3)}ms'
         response["Access-Control-Expose-Headers"] = "X-Response-Time"
 
         return response
