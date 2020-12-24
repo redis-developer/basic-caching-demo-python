@@ -28,7 +28,7 @@ async def get_repositories_count(response_data, repository_name):
             cache.set(
                 repository_name,
                 public_repositories_count,
-                timeout=10,
+                timeout=3600,
             )
         else:
             return HttpResponseNotFound()
