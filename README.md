@@ -21,7 +21,7 @@ Show how the redis works with Django(Python).
 ### How to run it locally?
 
 #### Setup and run frontend
-Install Node on mac: https://www.npmjs.com/get-npm
+Install Node (on mac: https://www.npmjs.com/get-npm)
 ```sh
 cd client
 npm install
@@ -29,7 +29,7 @@ npm run serve
 ```
 
 ### Run docker compose or install redis manually
-Install docker on mac: https://docs.docker.com/docker-for-mac/install/
+Install docker (on mac: https://docs.docker.com/docker-for-mac/install/)
 
 ```sh
 docker network create global
@@ -42,7 +42,7 @@ docker-compose up -d --build
     - REDIS_DB: Redis server db index
 
 #### Setup and run backend
-Install python, pip and venv on mac: https://installpython3.com/mac/
+Install python, pip and venv (on mac: https://installpython3.com/mac/)
 
 Use python version: 3.8
 ``` sh
