@@ -3,7 +3,7 @@
   "description": "App for testing request rate limits in Python and Redis",
   "repository": "https://github.com/",
   "logo": "https://redis.io/images/redis-white.png",
-  "keywords": ["python", "py", "redis"],
+  "keywords": ["node", "express", "python", "py", "redis"],
   "env": {
 		"REDIS_HOST": {
 	  	"description": "Redis server host",
