@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import django_heroku
 
 # load dotenv config
 load_dotenv()
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'configuration.stats_middleware.StatsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'configuration.urls'
@@ -123,12 +125,11 @@ REDIS_DB = os.getenv("REDIS_DB", '0')
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f'redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}',
+        "LOCATION": os.environ.get('REDIS_URL', f'redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}'),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
         "KEY_FUNCTION": "configuration.key_function.key_maker"
-
     }
 }
 
@@ -151,3 +152,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+WHITENOISE_INDEX_FILE = True
+WHITENOISE_ROOT = os.path.join(STATIC_ROOT, 'vue')
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

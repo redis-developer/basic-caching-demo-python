@@ -1,21 +1,13 @@
 {
-  "name": "Redis Rate Limit Example",
-  "description": "App for testing request rate limits in Python and Redis",
+  "name": "Django(python) Redis caching Example",
+  "description": "Show how the redis works with Django(Python).",
   "repository": "https://github.com/",
   "logo": "https://redis.io/images/redis-white.png",
-  "keywords": ["node", "express", "python", "py", "redis"],
-  "env": {
-		"REDIS_HOST": {
-	  	"description": "Redis server host",
-      "required": true
-    },
-    "REDIS_PORT": {
-	    "description": "Redis server port",
-	    "required": true
-    },
-    "REDIS_DB": {
-	    "description": "Redis server db index",
-	    "required": true
+  "keywords": ["python", "py", "redis"],
+  "addons": ["heroku-redis"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
     }
-  }
+  ]
 }
