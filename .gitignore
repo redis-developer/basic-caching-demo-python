@@ -9,4 +9,6 @@ __pycache__/
 
 .env
 
+staticfiles/
+
 *.sqlite3
