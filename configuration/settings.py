@@ -13,18 +13,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import django_heroku
+# import django_heroku
 
 # load dotenv config
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,13 +38,13 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -90,12 +85,7 @@ WSGI_APPLICATION = 'configuration.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = {}
 
 
 # Password validation
@@ -152,9 +142,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 WHITENOISE_INDEX_FILE = True
 WHITENOISE_ROOT = os.path.join(STATIC_ROOT, 'vue')
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

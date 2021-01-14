@@ -1,20 +1,22 @@
 {
-    "version": 1,
-    "name": "redis-rate-limit",
-    "builds": [{
-        "src": "django-backend/configuration/wsgi.py",
-        "use": "@ardnt/now-python-wsgi",
-        "config": { "maxLambdaSize": "15mb" }
-    }, {
-      "src": "client.src.main.js",
-      "use": "@nuxtjs/vercel-builder",
+  "version": 2,
+  "name": "RedisCachingPython",
+  "builds": [
+    {
+      "src": "index.py",
+      "use": "@now/python@canary",
+      "config": { "maxLambdaSize": "25mb" }
+    },{
+      "src": "now_build_staticfiles.sh",
+      "use": "@now/static-build",
       "config": {
-        "serverFiles": ["package.json"]
+        "distDir": "staticfiles"
       }
-    }],
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "django-backend/configuration/wsgi.py"
-    }, { "src": "/(.*)", "dest": "/" }]
+    }
+  ],
+  "routes": [{"src": "/(.*)", "dest": "/"}, {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    }
+  ]
 }
-
