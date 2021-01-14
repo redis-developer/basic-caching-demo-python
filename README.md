@@ -24,7 +24,7 @@ Show how the redis works with Django(Python).
     <a>
 </p>
 <p>
-    <a href="https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fdeliveryweb%2Fredis-caching-python&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD&envDescription=REDIS_ENDPOINT_URI%20is%20required%20at%20least%20to%20connect%20to%20Redis%20clouding%20server" target="_blank">
+    <a href="https://vercel.com/new/git/external?repository-url=https://github.com/deliveryweb/redis-caching-python/tree/dev&env=REDIS_HOST,REDIS_PORT,REDIS_PASSWORD" target="_blank">
         <img src="https://vercel.com/button" alt="Deploy with Vercel" width="200px" height="50px"/>
     </a>
 </p>
@@ -36,14 +36,6 @@ Show how the redis works with Django(Python).
 
 
 ### How to run it locally?
-
-#### Setup and run frontend
-Install Node (on mac: https://www.npmjs.com/get-npm)
-```sh
-cd client
-npm install
-npm run serve
-```
 
 ### Run docker compose or install redis manually
 Install docker (on mac: https://docs.docker.com/docker-for-mac/install/)
@@ -57,6 +49,7 @@ docker-compose up -d --build
     - REDIS_HOST: Redis server host
     - REDIS_PORT: Redis server port
     - REDIS_DB: Redis server db index
+    - REDIS_PASSWORD: Redis server password
 
 #### Setup and run backend
 Install python, pip and venv (on mac: https://installpython3.com/mac/)
@@ -67,6 +60,6 @@ python3 -m venv venv
 source ./venv/bin/activate
 pip3 install -r requirements.txt
 cd django-backend
-python3 manage.py migrate
+python3 manage.py collectstatic
 gunicorn configuration.asgi:application -b 127.0.0.1:5000 -k uvicorn.workers.UvicornWorker
 ```

@@ -107,9 +107,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-REDIS_HOST = os.getenv("REDIS_HOST", '127.0.0.11')
-REDIS_PORT = os.getenv("REDIS_PORT", '63791')
-REDIS_DB = os.getenv("REDIS_DB", '01')
+REDIS_HOST = os.getenv("REDIS_HOST", '127.0.0.1')
+REDIS_PORT = os.getenv("REDIS_PORT", '6379')
+REDIS_DB = os.getenv("REDIS_DB", '0')
+REDIS_PASSWORD = os.getenv('REDIS_PASSWORD', None)
 
 
 CACHES = {
@@ -117,6 +118,7 @@ CACHES = {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": os.environ.get('REDIS_URL', f'redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}'),
         "OPTIONS": {
+            "PASSWORD": REDIS_PASSWORD,
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
         "KEY_FUNCTION": "configuration.key_function.key_maker"
