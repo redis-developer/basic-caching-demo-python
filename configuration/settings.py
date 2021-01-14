@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-# import django_heroku
+import django_heroku
 
 # load dotenv config
 load_dotenv()
@@ -153,4 +153,4 @@ WHITENOISE_INDEX_FILE = True
 WHITENOISE_ROOT = os.path.join(STATIC_ROOT, 'vue')
 
 # Activate Django-Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())

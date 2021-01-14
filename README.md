@@ -59,7 +59,6 @@ Use python version: 3.8
 python3 -m venv venv
 source ./venv/bin/activate
 pip3 install -r requirements.txt
-cd django-backend
 python3 manage.py collectstatic
 gunicorn configuration.asgi:application -b 127.0.0.1:5000 -k uvicorn.workers.UvicornWorker
 ```
