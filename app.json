@@ -1,6 +1,6 @@
 {
-  "name": "Redis Rate Limit Example",
-  "description": "App for testing request rate limits in Python and Redis",
+  "name": "Django Redis caching Example",
+  "description": "Show how the redis works with Django(Python)",
   "repository": "https://github.com/",
   "logo": "https://redis.io/images/redis-white.png",
   "keywords": ["python", "py", "redis"]
