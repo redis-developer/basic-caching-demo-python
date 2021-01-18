@@ -2,11 +2,10 @@
 # https://hub.docker.com/_/python
 FROM python:3.9
 
-ENV APP_HOME redis-caching-python
-WORKDIR $APP_HOME
+WORKDIR /usr/src/app/
 
 RUN pwd
-RUN echo "$PWD"
+
 # Install dependencies.
 COPY requirements.txt .
 RUN pip install -r requirements.txt
@@ -14,6 +13,7 @@ RUN pip install -r requirements.txt
 # Copy local code to the container image.
 COPY . .
 
+RUN echo "$PWD"
 # Service must listen to $PORT environment variable.
 # This default value facilitates local development.
 ENV PORT 8080
