@@ -2,9 +2,11 @@
 # https://hub.docker.com/_/python
 FROM python:3.9
 
-ENV APP_HOME /redis-caching-python
+ENV APP_HOME redis-caching-python
 WORKDIR $APP_HOME
 
+RUN pwd
+RUN echo "$PWD"
 # Install dependencies.
 COPY requirements.txt .
 RUN pip install -r requirements.txt
