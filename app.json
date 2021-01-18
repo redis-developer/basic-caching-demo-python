@@ -10,6 +10,8 @@
   "hooks": {
     "prebuild": {
       "commands": [
+        "cd redis-caching-python",
+        "gcloud config set project ${GOOGLE_CLOUD_PROJECT}",
         "gcloud builds submit"
       ]
     }
