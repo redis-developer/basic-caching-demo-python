@@ -9,8 +9,8 @@ services:
     django-app:
         container_name: django-redis
         build:
-          context: ../
-          dockerfile: Dockerfile
+          context: .
+          dockerfile: google-cloud-run/Dockerfile
         environment:
           - REDIS_URL=redis://redis:6379
         ports:
