@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    redis:
+        image: redis:latest
+        container_name: redis-server
+        restart: unless-stopped
+
+    django-app:
+        container_name: django-redis
+        build:
+          dockerfile: google-cloud-run/Dockerfile
+          context: ../
+        environment:
+          - REDIS_URL=redis://redis:6379
+        ports:
+          - 8080:8080
+        depends_on:
+          - redis
+        restart: on-failure
