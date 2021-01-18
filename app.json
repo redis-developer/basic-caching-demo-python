@@ -3,5 +3,15 @@
   "description": "Show how the redis works with Django(Python)",
   "repository": "https://github.com/",
   "logo": "https://redis.io/images/redis-white.png",
-  "keywords": ["python", "py", "redis"]
+  "keywords": ["python", "py", "redis"],
+  "build": {
+    "skip": true
+  },
+  "hooks": {
+    "prebuild": {
+      "commands": [
+        "gcloud builds submit"
+      ]
+    }
+  }
 }
