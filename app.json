@@ -5,7 +5,6 @@
   "logo": "https://redis.io/images/redis-white.png",
   "keywords": ["python", "py", "redis"],
   "options": {
-    "vpc-connector": "redisdb-vpc-connector",
     "set-env-vars": "REDIS_URL=redis://${REDIS_HOST}:${REDIS_PORT}"
   },
   "hooks": {
