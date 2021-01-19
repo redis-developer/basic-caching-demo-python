@@ -4,14 +4,16 @@
   "repository": "https://github.com/",
   "logo": "https://redis.io/images/redis-white.png",
   "keywords": ["python", "py", "redis"],
-  "build": {
-    "skip": true
+  "options": {
+    "vpc-connector": "redisdb-vpc-connector",
+    "set-env-vars": "REDIS_URL=redis://${REDIS_HOST}:{REDIS_PORT}",
   },
   "hooks": {
     "prebuild": {
       "commands": [
-        "gcloud config set project ${GOOGLE_CLOUD_PROJECT}",
-        "gcloud builds submit"
+        "gcloud redis instances create redisdb --region ${GOOGLE_CLOUD_REGION}",
+        "gcloud compute networks vpc-access connectors create redisdb-vpc-connector --network default --region ${GOOGLE_CLOUD_REGION} --range 10.8.0.0/28",
+        "./prebuild-redis-env"
       ]
     }
   }
