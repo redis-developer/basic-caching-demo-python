@@ -3,3 +3,5 @@ set -euxo pipefail
 
 export REDIS_HOST=$(gcloud redis instances describe redis1 --region us-central1 --format "value(host)")
 export REDIS_PORT=$(gcloud redis instances describe redis1 --region us-central1 --format "value(port)")
+echo ${REDIS_HOST}
+echo ${REDIS_PORT}

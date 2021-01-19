@@ -4,9 +4,6 @@
   "repository": "https://github.com/",
   "logo": "https://redis.io/images/redis-white.png",
   "keywords": ["python", "py", "redis"],
-  "options": {
-    "set-env-vars": "REDIS_URL=redis://${REDIS_HOST}:${REDIS_PORT}"
-  },
   "hooks": {
     "prebuild": {
       "commands": [
