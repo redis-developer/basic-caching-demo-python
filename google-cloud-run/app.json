@@ -11,7 +11,7 @@
     "prebuild": {
       "commands": [
         "echo 'prebuild'",
-        "./prebuild-redis-env"
+        "./prebuildRedis"
       ]
     }
   }
