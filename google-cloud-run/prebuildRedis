@@ -9,4 +9,4 @@ export REDIS_PORT=$(gcloud redis instances describe redisdb --region ${GOOGLE_CL
 echo ${REDIS_HOST}
 echo ${REDIS_PORT}
 
-docker build -t ${IMAGE_URL} --build-arg REDIS_URL_ADDRESS=redis://${REDIS_HOST}:${REDIS_PORT} -f ${PARENT_PATH} ${PARENT_PATH}/google-cloud-run
+docker build -t ${IMAGE_URL} --build-arg REDIS_URL_ADDRESS=redis://${REDIS_HOST}:${REDIS_PORT} -f ${PARENT_PATH}/google-cloud-run/Dockerfile ${PARENT_PATH}
