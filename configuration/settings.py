@@ -14,10 +14,6 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-HEROKU_DEPLOY=os.getenv("HEROKU_DEPLOY", False)
-
-if HEROKU_DEPLOY:
-    import django_heroku
 
 # load dotenv config
 load_dotenv()
@@ -35,7 +31,7 @@ SECRET_KEY = 'l8ftx5(_snb7om^ib$!4g%e+x3ph+eqw$*rtx!dnsf%#*2^r*d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DJANGO_DEBUG", False)
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ['127.0.0.1', 'localhost', '.vercel.app', 'a.run.app', '.a.run.app'])
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ['127.0.0.1', 'localhost', '.vercel.app', 'a.run.app', '.a.run.app', '.herokuapp.com'])
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -155,7 +151,4 @@ STATICFILES_DIRS = (
 
 WHITENOISE_INDEX_FILE = True
 WHITENOISE_ROOT = os.path.join(STATIC_ROOT, 'vue')
-
-if HEROKU_DEPLOY:
-    django_heroku.settings(locals())
 
