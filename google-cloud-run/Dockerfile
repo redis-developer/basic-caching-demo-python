@@ -17,9 +17,8 @@ RUN pip install -r google-cloud-run/requirements.txt
 # Service must listen to $PORT environment variable.
 # This default value facilitates local development.
 ARG REDIS_URL_ADDRESS
-ARG SERVICE_URL
 
-ENV ALLOWED_HOSTS=$SERVICE_URL
+ENV ALLOWED_HOSTS *
 ENV REDIS_URL=$REDIS_URL_ADDRESS
 RUN echo "$REDIS_URL"
 ENV PORT 8080
