@@ -7,8 +7,8 @@ WORKDIR /usr/src/app/
 RUN pwd
 
 # Install dependencies.
-COPY requirements.txt .
-RUN pip install -r google-cloud-run/requirements.txt
+COPY requirements.txt google-cloud-run/
+RUN pip install -r requirements.txt
 
 # Copy local code to the container image.
 COPY . .
