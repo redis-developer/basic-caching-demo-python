@@ -8,10 +8,11 @@ RUN pwd
 RUN echo "$PWD"
 RUN ls
 
+COPY . .
+
 RUN pip install -r redis-caching-python/google-cloud-run/requirements.txt
 
 # Copy local code to the container image.
-COPY . .
 
 # Service must listen to $PORT environment variable.
 # This default value facilitates local development.
