@@ -24,7 +24,7 @@ Show how the redis works with Django(Python).
     <a>
 </p>
 <p>
-    <a href="https://vercel.com/new/git/external?repository-url=https://github.com/deliveryweb/redis-caching-python/tree/dev&env=REDIS_HOST,REDIS_PORT,REDIS_PASSWORD" target="_blank">
+    <a href="https://vercel.com/new/git/external?repository-url=https://github.com/redis-developer/basic-caching-demo-python/tree/master&env=REDIS_HOST,REDIS_PORT,REDIS_PASSWORD" target="_blank">
         <img src="https://vercel.com/button" alt="Deploy with Vercel" width="200px" height="50px"/>
     </a>
 </p>
@@ -48,7 +48,7 @@ Show how the redis works with Django(Python).
 ![3 step](docs/3.png)
 
 <a href="https://github.com/GoogleCloudPlatform/cloud-run-button/issues/108#issuecomment-554572173">
-Problem with unsupported the flags when deploying google cloud run button
+Problem with unsupported flags when deploying google cloud run button
 </a>
 
 ---
