@@ -3,18 +3,12 @@ version: '3'
 services:
     redis:
         image: redis:latest
-        container_name: redis-server
+        container_name: redis.redisdjangocaching.docker
         restart: unless-stopped
-
-    django-app:
-        container_name: django-redis
-        build:
-          context: .
-          dockerfile: google-cloud-run/Dockerfile
-        environment:
-          - REDIS_URL=redis://redis:6379
         ports:
-          - 8080:8080
-        depends_on:
-          - redis
-        restart: on-failure
+            - 127.0.0.1:${REDIS_PORT}:6379
+        networks:
+            - global
+networks:
+    global:
+        external: true

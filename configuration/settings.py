@@ -14,6 +14,11 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+HEROKU_DEPLOY=os.getenv("HEROKU_DEPLOY", False)
+
+if HEROKU_DEPLOY:
+    import django_heroku
+
 # load dotenv config
 load_dotenv()
 
@@ -150,3 +155,7 @@ STATICFILES_DIRS = (
 
 WHITENOISE_INDEX_FILE = True
 WHITENOISE_ROOT = os.path.join(STATIC_ROOT, 'vue')
+
+if HEROKU_DEPLOY:
+    django_heroku.settings(locals())
+

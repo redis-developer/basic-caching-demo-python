@@ -1,12 +1,10 @@
-# Use an official lightweight Python image.
+# Use an official Python image.
 # https://hub.docker.com/_/python
 FROM python:3.9
 
 WORKDIR /usr/src/app/
 
 RUN pwd
-RUN echo "$PWD"
-RUN ls
 
 COPY . .
 
@@ -19,9 +17,7 @@ RUN pip install -r google-cloud-run/requirements.txt
 ARG REDIS_URL_ADDRESS
 
 ENV REDIS_URL=$REDIS_URL_ADDRESS
-RUN echo "$REDIS_URL"
 ENV PORT 8080
-ENV DJANGO_DEBUG True
 
 # Setting this ensures print statements and log messages
 # promptly appear in Cloud Logging.
