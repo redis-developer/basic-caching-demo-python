@@ -32,10 +32,13 @@ Show how the redis works with Django(Python).
     <a href="https://deploy.cloud.run/?dir=google-cloud-run" target="_blank">
         <img src="https://deploy.cloud.run/button.svg" alt="Run on Google Cloud" width="200px"/>
     </a>
+    (See notes: How to run on Google Cloud)
 </p>
 <p>
     After successful deployment, you need to manually enable the vpc connector as shown in the pictures:
 </p>
+
+### How to run on Google Cloud
 
 1. Open link google cloud console.
 ![1 step](docs/1.png)
