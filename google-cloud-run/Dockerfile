@@ -10,7 +10,7 @@ RUN ls
 
 COPY . .
 
-RUN pip install -r redis-caching-python/google-cloud-run/requirements.txt
+RUN pip install -r google-cloud-run/requirements.txt
 
 # Copy local code to the container image.
 
