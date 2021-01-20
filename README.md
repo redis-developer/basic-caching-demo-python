@@ -35,7 +35,7 @@ Show how the redis works with Django(Python).
     (See notes: How to run on Google Cloud)
 </p>
 
-### How to run on Google Cloud
+## How to run on Google Cloud
 <p>
     After successful deployment, you need to manually enable the vpc connector as shown in the pictures:
 </p>
@@ -51,7 +51,9 @@ Show how the redis works with Django(Python).
 Problem with unsupported the flags when deploying google cloud run button
 </a>
 
-### How to run it locally?
+---
+
+## How to run it locally?
 
 ### Run docker compose or install redis manually
 Install docker (on mac: https://docs.docker.com/docker-for-mac/install/)
