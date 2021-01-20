@@ -80,6 +80,3 @@ pip3 install -r requirements.txt
 python3 manage.py collectstatic
 gunicorn configuration.asgi:application -b 127.0.0.1:5000 -k uvicorn.workers.UvicornWorker
 ```
-
-
-https://github.com/GoogleCloudPlatform/cloud-run-button/issues/108#issuecomment-554572173
