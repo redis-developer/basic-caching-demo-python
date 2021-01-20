@@ -33,7 +33,20 @@ Show how the redis works with Django(Python).
         <img src="https://deploy.cloud.run/button.svg" alt="Run on Google Cloud" width="200px"/>
     </a>
 </p>
+<p>
+    After successful deployment, you need to manually enable the vpc connector as shown in the pictures:
+</p>
 
+1. Open link google cloud console.
+![1 step](docs/1.png)
+2. Click "Edit and deploy new revision" button.
+![2 step](docs/2.png)
+3. Select vpc-connector and deploy application.
+![3 step](docs/3.png)
+
+<a href="https://github.com/GoogleCloudPlatform/cloud-run-button/issues/108#issuecomment-554572173">
+Problem with unsupported the flags when deploying google cloud run button
+</a>
 
 ### How to run it locally?
 
@@ -62,3 +75,6 @@ pip3 install -r requirements.txt
 python3 manage.py collectstatic
 gunicorn configuration.asgi:application -b 127.0.0.1:5000 -k uvicorn.workers.UvicornWorker
 ```
+
+
+https://github.com/GoogleCloudPlatform/cloud-run-button/issues/108#issuecomment-554572173
