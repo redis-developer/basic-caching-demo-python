@@ -13,18 +13,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import django_heroku
+
 
 # load dotenv config
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 
 # Quick-start development settings - unsuitable for production
@@ -36,20 +31,20 @@ SECRET_KEY = 'l8ftx5(_snb7om^ib$!4g%e+x3ph+eqw$*rtx!dnsf%#*2^r*d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DJANGO_DEBUG", False)
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ['127.0.0.1', 'localhost'])
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ['127.0.0.1', 'localhost', '.vercel.app', 'a.run.app', '.a.run.app', '.herokuapp.com'])
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -90,12 +85,7 @@ WSGI_APPLICATION = 'configuration.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = {}
 
 
 # Password validation
@@ -120,6 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 REDIS_HOST = os.getenv("REDIS_HOST", '127.0.0.1')
 REDIS_PORT = os.getenv("REDIS_PORT", '6379')
 REDIS_DB = os.getenv("REDIS_DB", '0')
+REDIS_PASSWORD = os.getenv('REDIS_PASSWORD', None)
 
 
 CACHES = {
@@ -127,6 +118,7 @@ CACHES = {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": os.environ.get('REDIS_URL', f'redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}'),
         "OPTIONS": {
+            "PASSWORD": REDIS_PASSWORD,
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
         "KEY_FUNCTION": "configuration.key_function.key_maker"
@@ -152,9 +144,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 WHITENOISE_INDEX_FILE = True
 WHITENOISE_ROOT = os.path.join(STATIC_ROOT, 'vue')
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
