@@ -6,9 +6,9 @@ WORKDIR /usr/src/app/
 
 RUN pwd
 RUN echo "$PWD"
-# Install dependencies.
-COPY requirements.txt redis-caching-python/google-cloud-run/
-RUN pip install -r requirements.txt
+RUN ls
+
+RUN pip install -r redis-caching-python/google-cloud-run/requirements.txt
 
 # Copy local code to the container image.
 COPY . .
