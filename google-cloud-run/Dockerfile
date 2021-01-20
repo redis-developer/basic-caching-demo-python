@@ -5,15 +5,14 @@ FROM python:3.9
 WORKDIR /usr/src/app/
 
 RUN pwd
-
+RUN echo "$PWD"
 # Install dependencies.
-COPY requirements.txt google-cloud-run/
+COPY requirements.txt redis-caching-python/google-cloud-run/
 RUN pip install -r requirements.txt
 
 # Copy local code to the container image.
 COPY . .
 
-RUN echo "$PWD"
 # Service must listen to $PORT environment variable.
 # This default value facilitates local development.
 ARG REDIS_URL_ADDRESS
