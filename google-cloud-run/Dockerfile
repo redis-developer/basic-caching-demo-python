@@ -18,7 +18,6 @@ RUN pip install -r google-cloud-run/requirements.txt
 # This default value facilitates local development.
 ARG REDIS_URL_ADDRESS
 
-ENV ALLOWED_HOSTS *
 ENV REDIS_URL=$REDIS_URL_ADDRESS
 RUN echo "$REDIS_URL"
 ENV PORT 8080
