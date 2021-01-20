@@ -11,6 +11,9 @@
     }
   ],
   "env": {
-    "HEROKU_DEPLOY": "True"
+    "HEROKU_DEPLOY": {
+      "value": "True",
+      "required": false
+    }
   }
 }
