@@ -12,6 +12,7 @@ httpcore==0.12.2
 httptools==0.1.1
 httpx==0.16.1
 idna==2.10
+psycopg2==2.7.5
 python-dotenv==0.15.0
 pytz==2020.4
 redis==3.5.3
