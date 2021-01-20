@@ -10,13 +10,8 @@
   "hooks": {
     "prebuild": {
       "commands": [
-        "gcloud config set project ${GOOGLE_CLOUD_PROJECT}",
-        "PARENT_PATH=$(cd ../ && pwd)",
-        "REDIS_HOST=$(gcloud redis instances describe redisdb --region ${GOOGLE_CLOUD_REGION} --format 'value(host)')",
-        "REDIS_PORT=$(gcloud redis instances describe redisdb --region ${GOOGLE_CLOUD_REGION} --format 'value(port)')",
-        "echo ${REDIS_HOST}",
-        "echo ${REDIS_PORT}",
-        "docker build -t ${IMAGE_URL} --build-arg REDIS_URL_ADDRESS=redis://${REDIS_HOST}:${REDIS_PORT} -f ${PARENT_PATH} ${PARENT_PATH}/google-cloud-run"
+        "echo 'prebuild'",
+        "./prebuild-redis-env"
       ]
     }
   }
