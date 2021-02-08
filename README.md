@@ -13,10 +13,6 @@ Show how the redis works with Django(Python).
 
 ![How it works](docs/screenshot001.png)
 
-# Redis rate-caching example (command line)
-
-![How it works](docs/radis-ching.png)
-
 ## Try it out
 <p>
     <a href="https://heroku.com/deploy" target="_blank">
@@ -52,7 +48,19 @@ Problem with unsupported flags when deploying google cloud run button
 </a>
 
 ---
+# How it works?
 
+## 1. How the data is stored:
+
+### 1. New repos are added
+    SETEX redis 3600 14 
+
+## 2. How the data is accessed:
+
+### 1. Get cache
+    GET redis
+
+---
 ## How to run it locally?
 
 ### Run docker compose or install redis manually
