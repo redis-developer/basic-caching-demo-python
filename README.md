@@ -49,17 +49,17 @@ Problem with unsupported flags when deploying google cloud run button
 
 ---
 # How it works?
-
 ## 1. How the data is stored:
-
-### 1. New repos are added
-    SETEX redis 3600 14 
+<ol>
+    <li>New repos are added:<pre> SETEX redis 3600 14</pre></li>
+</ol>
+<br/>
 
 ## 2. How the data is accessed:
-
-### 1. Get cache
-    GET redis
-
+<ol>
+    <li> Get cache: <pre>GET redis</pre> </li>
+</ol>
+  
 ---
 ## How to run it locally?
 
