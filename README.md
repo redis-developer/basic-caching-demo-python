@@ -61,6 +61,7 @@ Problem with unsupported flags when deploying google cloud run button
 </ol>
   
 ---
+
 ## How to run it locally?
 
 ### Run docker compose or install redis manually
