@@ -51,13 +51,21 @@ Problem with unsupported flags when deploying google cloud run button
 # How it works?
 ## 1. How the data is stored:
 <ol>
-    <li>New repos are added:<pre> SETEX redis 3600 14</pre></li>
+     <li>New repos are added:<pre>SETEX github_username timeout amount_of_repositories
+Example: SETEX redis 3600 14</pre> 
+<a href="https://redis.io/commands/setex">
+more information</a>
+</li>
 </ol>
-<br/>
 
 ## 2. How the data is accessed:
 <ol>
-    <li> Get cache: <pre>GET redis</pre> </li>
+    <li> Get cache (Don't think about cache's timeout): <pre>GET github_username
+Example: GET redis</pre>
+<a href="https://redis.io/commands/get">
+more information</a>
+</li>
+
 </ol>
   
 ---
