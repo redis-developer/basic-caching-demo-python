@@ -23,6 +23,6 @@ ENV PORT 8080
 # promptly appear in Cloud Logging.
 ENV PYTHONUNBUFFERED TRUE
 
-RUN python3 manage.py collectstatic
+RUN python3 server/manage.py collectstatic
 
-CMD exec gunicorn configuration.asgi:application -b 0.0.0.0:$PORT -k uvicorn.workers.UvicornWorker
+CMD exec gunicorn --chdir server configuration.asgi:application -b 127.0.0.1:5000 -k uvicorn.workers.UvicornWorker

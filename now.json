@@ -3,14 +3,14 @@
   "name": "RedisCachingPython",
   "builds": [
     {
-      "src": "index.py",
+      "src": "server/index.py",
       "use": "@now/python@canary",
       "config": { "maxLambdaSize": "25mb" }
     },{
       "src": "now_build_staticfiles.sh",
       "use": "@now/static-build",
       "config": {
-        "distDir": "staticfiles"
+        "distDir": "server/staticfiles"
       }
     }
   ],
