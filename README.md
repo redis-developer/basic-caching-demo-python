@@ -32,7 +32,6 @@ Show how the redis works with Django(Python).
 </p>
 
 ## How to run on Google Cloud
-## How to run on Google Cloud
 
 <p>
     If you don't have redis yet, plug it in  (https://spring-gcp.saturnism.me/app-dev/cloud-services/cache/memorystore-redis).
