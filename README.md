@@ -81,6 +81,9 @@ docker-compose up -d --build
 ```
 
 #### If you install redis manually open django-backend/configuration folder and copy `.env.example` to create `.env`. And provide the values for environment variables
+    - DJANGO_DEBUG: Django debug mode
+    - ALLOWED_HOSTS: Allowed hosts
+    - REDIS_URL: Redis server url
     - REDIS_HOST: Redis server host
     - REDIS_PORT: Redis server port
     - REDIS_DB: Redis server db index
