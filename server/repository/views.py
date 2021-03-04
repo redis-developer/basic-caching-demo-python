@@ -24,7 +24,7 @@ async def get_repositories_count(response_data, repository_name):
             'public_repos'
         )
 
-        if public_repositories_count is not None:
+        if public_repositories_count:
             cache.set(
                 repository_name,
                 public_repositories_count,
@@ -52,10 +52,13 @@ class GetRepositoriesView(View):
             'cached': False,
         }
 
-        if public_repository_cache is not None:
+        if public_repository_cache:
             response_data['repos'] = public_repository_cache
             response_data['cached'] = True
         else:
             response_data = await get_repositories_count(response_data, repository_name)
+        
+        if response_data.get('content-type'):
+            return response_data
 
         return HttpResponse(json.dumps(response_data), status=200)
