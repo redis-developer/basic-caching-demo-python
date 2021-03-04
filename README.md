@@ -7,7 +7,7 @@
 
 # Django(python) Redis caching Example
 
-Show how the redis works with Django(Python).
+This app returns the number of repositories a Github account has. When you first search for an account, the server calls Github's API to return the response. This can take 100s of milliseconds. The server then adds the details of this slow response to Redis for future requests. When you search again, the next response comes directly from Redis cache instead of calling Github. The responses are usually usually in a millisecond or so making it blazing fast.
 
 # Redis rate-caching example front
 
@@ -20,7 +20,7 @@ Show how the redis works with Django(Python).
     <a>
 </p>
 <p>
-    <a href="https://vercel.com/new/git/external?repository-url=https://github.com/deliveryweb/redis-caching-python/tree/master&env=REDIS_HOST,REDIS_PORT,REDIS_PASSWORD" target="_blank">
+    <a href="https://vercel.com/new/git/external?repository-url=https://github.com/redis-developer/basic-caching-demo-python/tree/master&env=REDIS_HOST,REDIS_PORT,REDIS_PASSWORD" target="_blank">
         <img src="https://vercel.com/button" alt="Deploy with Vercel" width="200px" height="50px"/>
     </a>
 </p>
@@ -91,7 +91,7 @@ docker network create global
 docker-compose up -d --build
 ```
 
-#### If you install redis manually open django-backend/configuration folder and copy `.env.example` to create `.env`. And provide the values for environment variables
+#### Open directory server (cd server/configuration): copy .env.example to create .env (copy .env.example .env  or cp .env.example .env). And provide the values for environment variables (if needed)
     - DJANGO_DEBUG: Django debug mode
     - ALLOWED_HOSTS: Allowed hosts
     - REDIS_URL: Redis server url
@@ -100,10 +100,12 @@ docker-compose up -d --build
     - REDIS_DB: Redis server db index
     - REDIS_PASSWORD: Redis server password
 
-#### Setup and run backend
+#### Run backend
+
 Install python, pip and venv (on mac: https://installpython3.com/mac/)
 
 Use python version: 3.8
+
 ``` sh
 python3 -m venv venv
 source ./venv/bin/activate
@@ -111,3 +113,6 @@ pip3 install -r requirements.txt
 python3 server/manage.py collectstatic
 gunicorn --chdir server configuration.asgi:application -b 127.0.0.1:5000 -k uvicorn.workers.UvicornWorker
 ```
+#### Run frontend
+
+Static content runs automatically with the backend part. In case you need to run it separately, please see README in the [client](client) folder
