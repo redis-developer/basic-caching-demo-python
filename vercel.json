@@ -4,19 +4,18 @@
   "builds": [
     {
       "src": "server/index.py",
-      "use": "@now/python@canary",
+      "use": "@vercel/python",
       "config": { "maxLambdaSize": "25mb" }
     },{
       "src": "now_build_staticfiles.sh",
-      "use": "@now/static-build",
+      "use": "@vercel/static-build",
       "config": {
-        "distDir": "server/staticfiles"
+        "distDir": "server/staticfiles/vue"
       }
     }
   ],
-  "routes": [{"src": "/(.*)", "dest": "/"}, {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    }
-  ]
+  "routes": [{
+    "src": "/api/(.*)",
+    "dest": "server/index.py"
+}]
 }
