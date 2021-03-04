@@ -20,7 +20,7 @@ Show how the redis works with Django(Python).
     <a>
 </p>
 <p>
-    <a href="https://vercel.com/new/git/external?repository-url=https://github.com/redis-developer/basic-caching-demo-python/tree/master&env=REDIS_HOST,REDIS_PORT,REDIS_PASSWORD" target="_blank">
+    <a href="https://vercel.com/new/git/external?repository-url=https://github.com/deliveryweb/redis-caching-python/tree/master&env=REDIS_HOST,REDIS_PORT,REDIS_PASSWORD" target="_blank">
         <img src="https://vercel.com/button" alt="Deploy with Vercel" width="200px" height="50px"/>
     </a>
 </p>
