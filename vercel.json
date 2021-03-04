@@ -10,7 +10,7 @@
       "src": "now_build_staticfiles.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "server/staticfiles/vue"
+        "distDir": "server/staticfiles"
       }
     }
   ],
