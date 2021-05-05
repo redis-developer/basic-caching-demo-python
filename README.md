@@ -9,6 +9,12 @@
 
 Show how the redis works with Django(Python).
 
+# Overview video
+
+Here's a short video that explains the project and how it uses Redis:
+
+[![Watch the video on YouTube](docs/YTThumbnail.png)](https://youtube.com/watch?v=x4dwTM97tBM)
+
 # Redis rate-caching example front
 
 ![How it works](docs/screenshot001.png)
