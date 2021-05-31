@@ -21,7 +21,7 @@ Here's a short video that explains the project and how it uses Redis:
 
 # Redis rate-caching example (command line)
 
-![How it works](docs/radis-ching.png)
+![How it works](https://github.com/redis-developer/basic-caching-demo-python/raw/dev/docs/radis-ching.png)
 
 ## Try it out
 <p>
@@ -47,11 +47,11 @@ Here's a short video that explains the project and how it uses Redis:
 </p>
 
 1. Open link google cloud console.
-![1 step](docs/1.png)
+![1 step](https://github.com/redis-developer/basic-caching-demo-python/raw/dev/docs/1.png)
 2. Click "Edit and deploy new revision" button.
-![2 step](docs/2.png)
+![2 step](https://github.com/redis-developer/basic-caching-demo-python/raw/dev/docs/2.png)
 3. Select vpc-connector and deploy application.
-![3 step](docs/3.png)
+![3 step](https://github.com/redis-developer/basic-caching-demo-python/raw/dev/docs/3.png)
 
 <a href="https://github.com/GoogleCloudPlatform/cloud-run-button/issues/108#issuecomment-554572173">
 Problem with unsupported the flags when deploying google cloud run button
