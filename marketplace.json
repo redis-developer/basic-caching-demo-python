@@ -23,7 +23,7 @@
   "redis_features": ["caching"],
   "redis_modules": [],
   "app_image_urls": [
-      "https://raw.githubusercontent.com/redis-developer/basic-caching-demo-python/blob/master/docs/screenshot001.png"
+      "https://raw.githubusercontent.com/redis-developer/basic-caching-demo-python/master/docs/screenshot001.png"
   ],
   "youtube_url": "",
   "special_tags": [],
